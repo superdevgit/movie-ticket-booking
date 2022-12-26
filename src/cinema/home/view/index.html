@@ -1,0 +1,71 @@
+{{define "content"}}
+<div class="seat-container">
+    <div class="scr">Screen</div>
+    <div class="info">
+        <div class="seats"></div><div>Empty</div><br>
+        <div class="seats booked-seat"></div><div>Booked</div><br>
+        <div class="seats selected-seat"></div><div>Selected</div>
+    </div>
+    <div class="book-btn">
+        <button id="bookTkt">Book</button>
+    </div>
+    <div class="blocks">
+        {{$class := ""}}
+        {{ range index . 0 }}
+            {{ if .Status }}
+                {{$class = "booked-seat"}}
+                {{else}}
+                {{$class = "empty-seat"}}
+            {{end}}
+            <div class="seats {{$class}}" data-id="{{.SeatNumber}}">
+                {{.SeatNumber}}
+            </div>
+        {{end}}
+    </div>
+</div>
+
+<!-- Booking Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="response" class=""></div>
+    <div class="form" id="bookingForm">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <br>
+        <div><input type="button" id="bookBtn" value="Book"></div>
+    </div>
+    <div class="close-modal center-align"><button class="closeModal">Close</button> </div>
+  </div>
+</div>
+
+<!-- Cancel Booking Modal -->
+<div id="cancelBookingModal" class="modal">
+    <div class="modal-content">
+    <span id="cclose" class="close">&times;</span>
+    <div class="form" id="cform">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="cemail" name="cemail">
+        </div>
+        <div id="seatNos">
+            
+        </div>
+        <br>
+        <div><input type="button" id="cancelBookBtn" value="Cancel Booking"></div>
+    </div>
+
+    <div id="cancelRes" class="">
+        
+    </div>
+    <div id="closeCancelModal" class="center-align"><button class="closeModal">Close</button> </div>
+  </div>
+</div>
+
+{{end}}

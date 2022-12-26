@@ -1,0 +1,86 @@
+.seat-container{
+  margin-left: 35%;margin-right: 50%;margin-top: 10%; border: 1px solid; width: 455px; height: 500px;
+}
+.scr{padding:10px; text-align: center;background-color: #009CDE}
+.book-btn{margin: 10px;float: right;}
+.blocks{padding: 20px;margin-top: 100px;}
+.center-align{text-align: center;}
+.seats{
+    padding: 10px;
+    float: left;
+    border: 1px solid;
+    margin: 5px;
+    width: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+.booked-seat{
+    background-color: #9C9E9B;
+}
+.selected-seat{
+    background-color: #00FF00;
+}
+.empty-seat{
+    background-color: #FFFFFF;
+}
+#response {
+    text-align: center;
+    display: block;
+    border-radius: 3px;
+}
+.success-res{
+    background-color: #CCFFCC;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.err-res{
+    background-color: #FFE5E5;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#bookTkt, .close-modal, #closeCancelModal{
+  display: none;
+}
+
+#closeCancelModal, .close-modal {
+  margin-top: 40px;
+}
+ 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; 
+  min-height: 110px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
